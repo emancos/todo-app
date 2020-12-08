@@ -1,14 +1,22 @@
 import React, { Component } from 'react'
+import { Card } from 'react-bootstrap'
+import PageHeader from '../template/PageHeader'
+import TodoForm from './TodoForm'
+import TodoList from './TodoList'
 
 class Todo extends Component {
 
     render() {
         return (
-            <div class="alert alert-primary" role="alert">
-                <h4 class="alert-heading">ToDo</h4>
-                <hr />
-                This is a primary alert—check it out! <i className="fas fa-check"></i>
-            </div>
+            <Card>
+                <Card.Header>
+                    <PageHeader name='Tarefas' small='Cadastro' />
+                </Card.Header>
+                <Card.Body>
+                    <TodoForm />
+                    <TodoList />
+                </Card.Body>
+            </Card>
         )
     }
 }

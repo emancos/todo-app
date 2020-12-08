@@ -7,15 +7,16 @@ import Menu from '../template/Menu'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './App.css'
+import { Container } from 'react-bootstrap'
 
 const App = () => {
   return (
     <div className="App">
       <Router>
         <Menu />
-        <div className='container'>
+        <Container>
           <Routers />
-        </div>
+        </Container>
       </Router>
     </div>
   )
