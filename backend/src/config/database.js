@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const url = 'mongodb://localhost:27017/todo'
+const url = 'mongodb+srv://emancos:rakell17@cluster0.kyevq.mongodb.net/todo?retryWrites=true&w=majority'
 mongoose.Promise = global.Promise
 
 module.exports = mongoose.connect(url, {
