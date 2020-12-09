@@ -1,2 +1,2 @@
-![plot](./frontend/public/logo192.png)
+![plot](./frontend/public/logo128.png)
 # todo-app
