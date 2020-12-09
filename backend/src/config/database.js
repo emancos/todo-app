@@ -1,5 +1,9 @@
+require('dotenv').config({ path: process.cwd() + '/.env' })
 const mongoose = require('mongoose')
-const url = 'mongodb+srv://emancos:rakell17@cluster0.kyevq.mongodb.net/todo?retryWrites=true&w=majority'
+
+const { USER_DB, PASS_DB } = { ...process.env }
+const url = `mongodb+srv://${ USER_DB }:${ PASS_DB }@cluster0.kyevq.mongodb.net/todo?retryWrites=true&w=majority`
+
 mongoose.Promise = global.Promise
 
 module.exports = mongoose.connect(url, {
@@ -11,7 +15,8 @@ module.exports = mongoose.connect(url, {
         console.log('\x1b[31m'+err);
     }
     else {
-        console.log('\x1b[34m'+'connected to ' + url);
+
+        console.log('\x1b[34m'+'connected to ' + url.replace(`${USER_DB}:${PASS_DB}@`, ''))
     }
 
 })
